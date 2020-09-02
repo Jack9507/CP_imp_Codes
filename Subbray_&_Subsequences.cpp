@@ -48,6 +48,20 @@ void sub_sequences(string str, string ans)
     sub_sequences(ros, ans);
 
 }
+
+void print_all_substrings(string str)
+{
+    int n=str.length();
+
+    for(int i=0; i<n; i++)
+    {
+        for(int len=1; len<=n-i; len++)
+        {
+            string ros= str.substr(i, len);
+            cout<<ros<<endl;
+        }
+    }
+}
 int32_t main()
 {
     ios_base::sync_with_stdio(false);
@@ -63,6 +77,9 @@ int32_t main()
     string str="1234";
     //printing all possible subsequences
     sub_sequences(str, "");
+    
+    string s1="jatin";
+    cout<<print_all_substrings(s1);
 
 
 

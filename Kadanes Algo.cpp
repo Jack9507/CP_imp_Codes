@@ -76,8 +76,8 @@ public:
 
 /*
    Third Solution uses Divide and Conquer approach
-   Time Complexity : O()
-   Space COmplexity : O()
+   Time Complexity : O(nlogn)
+   Space COmplexity : O(1)
 */
 
 class Solution {
@@ -134,3 +134,14 @@ public:
         return helper(nums, low, high);        
     }
 };
+
+/*
+Time Complexity: maxSubArraySum() is a recursive method and time complexity can be expressed as following recurrence relation.
+T(n) = 2T(n/2) + Θ(n)
+The above recurrence is similar to Merge Sort and can be solved either using Recurrence Tree method or Master method. 
+It falls in case II of Master Method and solution of the recurrence is Θ(nLogn).
+
+The Kadane’s Algorithm for this problem takes O(n) time. 
+Therefore the Kadane’s algorithm is better than the Divide and Conquer approach, but this problem can be considered as a good example to show power of Divide and Conquer.
+The above simple approach where we divide the array in two halves, reduces the time complexity from O(n^2) to O(nLogn).
+*/

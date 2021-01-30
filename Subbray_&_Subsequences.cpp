@@ -49,6 +49,39 @@ void sub_sequences(string str, string ans)
 
 }
 
+// Subsets ans subsequences are same the only difference is that subsets have empty set
+// {a b c} -set
+// all possible subsets are '2^n' :- 
+// {} - empty set 
+// a
+// b
+// c
+// a b
+// a c
+// b c
+// a b c
+
+// Time Complexity - O(2^n)  function grows exponentially
+void subsets_powerset(vector<char> &nums, int n)
+{
+	// in a set has 'n' elements then its power set will have 2^n elements
+	unsigned int size=pow(2,n);  
+	for (int counter = 0; counter <size; counter++)
+	{
+		for (int j = 0; j <n; j++)
+		{
+			// check if the j^th bit is set in counter or not
+            if(counter & (1<<j))
+            {
+            	//bit is set
+            	cout<<nums[j]<<" ";
+            }
+		}
+		cout<<endl;
+	}
+
+}
+
 void print_all_substrings(string str)
 {
     int n=str.length();
